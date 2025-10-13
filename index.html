@@ -494,7 +494,44 @@ footer {
   ]
 }
 </script>
+<script>
+(function() {
+  const baseUrl = "https://picscan.online";
+  const path = window.location.pathname.split("/").filter(Boolean);
 
+  const breadcrumbs = path.map((segment, index) => {
+    const name = segment
+      .replace(/[-_]/g, " ")
+      .replace(/\b\w/g, c => c.toUpperCase());
+    const url = baseUrl + "/" + path.slice(0, index + 1).join("/");
+    return {
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": name,
+      "item": url
+    };
+  });
+
+  const breadcrumbData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": baseUrl
+      },
+      ...breadcrumbs
+    ]
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.text = JSON.stringify(breadcrumbData, null, 2);
+  document.head.appendChild(script);
+})();
+</script>
 </head>
 <body>
 
