@@ -1,0 +1,6 @@
+# robots.txt for web app
+User-agent: *
+Allow: /
+
+# Sitemap location (gunakan domain Anda sendiri)
+Sitemap: https://picscan.vercel.app/sitemap.xml

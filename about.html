@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About - PICSCAN AI</title>
+<meta name="description" content="Picscan AI is ai image detector to help you identify images is real or ai generated with ease">
+<meta name="keywords" content="ai image detector, ai photo detector, ai generated image detector, ai detector, artificial intelligence detector, aı detector, ai detector free, chatgpt detector, chatgpt detectors, chat gpt detector, ai text detector, free ai detector, gpt detector, gpt detectors, ai writing detector, ai content detection, ai written detector, ai write detector, ai writing detectors, copyleaks ai detector, aidetector, ai detector tools, ai code detector, ai art detector, detecting ai writing, ai essay detector, detector ai">
+<link rel="canoncal" href="https://picscan.net/about.html">
+<meta name="last-updated" content="2025-10-10 09:08:54 UTC">
+<meta name="google-site-verification" content="M5xppDONCGYUKNv2npKwBb-hvnjPjuYM2lnAwCnrInk" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://picscan.net/about.html">
+  <meta property="og:title" content="AI Image Detector">
+  <meta property="og:image" content="https://picscan.net/picscan.webp">
+  <meta property="og:description" content="ai image detector to help you identify images is real or ai generated>
+  <meta property="og:site_name" content="PICSCAN">
+
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@thepracticaldev">
+  <meta name="twitter:title" content="AI Image Detector">
+  <meta name="twitter:description" content="ai image detector to help you identify images is real or ai generated">
+  <meta name="twitter:image:src" content="https://picscan.net/picscan.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Robots & Canonical -->
+  <meta name="robots" content="INDEX,FOLLOW,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <link rel="dns-prefetch" href="https://picscan.net">
+  <link rel="dns-prefetch" href="htps://https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="icon-16.png">
+  <link rel="apple-touch-icon" href="icon-512.png">
+  <meta name="theme-color" content="#1a2735" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1620" media="(prefers-color-scheme: dark)">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  body{background:#0f172a;color:#fff;font-family:system-ui,sans-serif;}
+  header{background:#1e293b;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.4);position:sticky;top:0;z-index:50;}
+  .navbar-logo{height:40px;}
+  footer{background:#1e293b;color:#cbd5e1;border-top:1px solid #334155;padding:40px 20px;}
+  #mobileMenu{display:none;flex-direction:column;gap:4px;background:#1e293b;position:absolute;top:60px;right:20px;padding:10px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.6);}
+  @media(max-width:640px){#mobileMenu{display:none;}.show{display:flex!important;}}
+  
+  /* PREVIEW AREA */
+  #imagePreview{display:none;position:relative;width:100%;max-width:420px;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin-top:1rem;}
+  #previewImg{max-height:100%;max-width:100%;object-fit:contain;display:block;margin:auto;}
+  #analyzeOverlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;}
+  .scan-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#00ff9d,transparent);animation:scanMove 2s linear infinite;}
+  @keyframes scanMove{0%{top:0;opacity:.8;}50%{top:100%;opacity:1;}100%{top:0;opacity:.8;}}
+  
+  /* MODAL */
+  #modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:100;}
+  #modal .box{background:#111827;color:#fff;border-radius:16px;width:90%;max-width:400px;padding:20px;position:relative;border:1px solid #334155;}
+  #modalClose{position:absolute;top:10px;right:10px;color:#94a3b8;cursor:pointer;}
+  #modalClose:hover{color:#fff;}
+  .sidebar-ad {
+  width: 300px;
+  min-width: 300px;
+  text-align: center;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 12px;
+  height: 250px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header {
+  background: #1e293b;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo kiri, menu kanan */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar-logo {
+  height: 40px;
+  display: block;
+}
+/* Layout container untuk konten utama + ads */
+.page-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+body > header + div.top-ad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e293b;
+  color: #94a3b8;
+  border-bottom: 1px solid #334155;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 12px auto 0 auto;
+  width: 728px;
+  max-width: 728px;
+  height: 90px;
+  font-size: 12px;
+  padding: 0;
+}
+.footer-ad {
+  width: 728px;
+  height: 90px;
+  margin: 0;
+  padding: 0;
+background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 12px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: 0; /* Pastikan tidak ada jarak ekstra */
+}
+
+@media (max-width: 1024px) {
+  body > header + div.top-ad {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 80px;
+    font-size: 11px;
+    padding: 10px;
+    margin-top: 8px;
+  }
+
+  /* Samakan breakpoint dengan layout lain */
+  .page-layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 16px;
+  }
+
+  .sidebar-ad {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    justify-content: center !important; /* pusatkan isi hanya di mobile */
+    position: relative;
+  }
+
+  /* tombol burger tetap di kanan */
+  #burger {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* sembunyikan nav desktop */
+  nav {
+    display: none;
+  }
+
+  /* logo tetap proporsional di tengah */
+  .navbar-logo {
+    margin: 0 auto;
+    height: 36px;
+  }
+}
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PICSCAN AI",
+    "url": "https://picscan.net",
+    "applicationCategory": "Multimedia",
+    "operatingSystem": "Any",
+    "description": "Picscan AI is ai image detector to help you identify images is real or ai generated with ease",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Picscan Labs",
+      "url": "https://picscan.net"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "247"
+    },
+    "featureList": [
+      "Upload images",
+      "Analyze images",
+      "Share result v via Facebook, Twitter, Telegram, LinkedIn"
+    ],
+    "screenshot": "https://picscan.net/preview.png"
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/"><img class="navbar-logo" src="picscan-header.png" alt="Picscan AI"></a>
+  <nav class="hidden sm:flex gap-5 text-sm">
+    <a href="/" >Home</a>
+    <a href="about.html" class="text-blue-400 font-semibold">About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-use.html">Terms Of Use</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="hover:text-blue-400">Contact</a>
+  </nav>
+  <button id="burger" class="sm:hidden text-gray-300" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+  <div id="mobileMenu">
+    <a href="/" class="text-blue-400 font-semibold">Home</a>
+    <a href="about.html" >About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-use.html">Terms Of Use</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="hover:text-blue-400">Contact</a>
+  </div>
+</header>
+
+<!-- TOP AD -->
+<div class="top-ad">
+  Responsive Top Ad Placeholder (728x90)
+</div>
+
+<!-- CONTENT -->
+<div class="page-layout">
+
+
+  <!-- LEFT AD -->
+ <aside class="sidebar-right">
+    <div class="sidebar-ad">
+      Right Sidebar Ad 300x250
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1">
+  <section class="card p-6 text-left space-y-4">
+    <h1 class="text-2xl font-semibold mb-2">About Picscan Online</h1>
+    <p><strong>Picscan AI</strong> is a trusted digital platform created to help internet users, content creators, journalists, and everyday people analyze whether an image is authentic or generated by Artificial Intelligence. As AI-generated visuals become increasingly realistic, verifying what’s genuine has never been more important.</p>
+
+    <p>Our platform uses modern detection techniques to highlight visual patterns that may indicate AI involvement. The process is simple, fast, and designed with privacy in mind — no personal data or uploaded images are permanently stored. Picscan’s goal is to make visual verification accessible to everyone, anywhere in the world.</p>
+
+    <p>At <strong>Picscan AI</strong>, we believe that technology should promote honesty, not confusion. We aim to raise public awareness about digital authenticity while supporting ethical and responsible AI usage. By empowering users to verify what they see online, we help build a safer and more transparent digital environment.</p>
+
+    <h2 class="text-xl font-semibold mt-6">Why Choose Picscan AI?</h2>
+    <ul class="list-disc list-inside text-white space-y-1">
+      <li>Accurate and easy-to-use photo analysis powered by AI research.</li>
+      <li>Privacy first approach, uploaded images are never stored or shared.</li>
+      <li>Ad-friendly and mobile-responsive design that complies with Google AdSense policies.</li>
+      <li>Optimized for accessibility and multilingual support for global users.</li>
+      <li>Constantly updated with improvements for higher detection accuracy.</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold mt-6">Our Mission</h2>
+    <p>Our mission is to promote trust, transparency, and critical awareness in the digital era. Whether you’re checking a viral photo, verifying research material, or simply exploring AI capabilities, <strong>Picscan AI</strong> provides a clear, reliable way to evaluate image authenticity with confidence.</p>
+
+    <h2 class="text-xl font-semibold mt-6">Our Commitment</h2>
+    <p>We are dedicated to continuous development and transparent communication. Every feature we release is carefully reviewed to maintain accuracy, security, and ethical standards. Picscan AI collaborates with independent experts and the broader tech community to ensure our service remains credible, educational, and beneficial for users worldwide.</p>
+
+    <p class="pt-4 text-sm text-gray-600">© 2025 Picscan Labs. All rights reserved.</p>
+  </section>
+</main>
+
+  <!-- RIGHT AD -->
+ <aside class="sidebar-right">
+    <div class="sidebar-ad">
+      Right Sidebar Ad 300x250
+    </div>
+  </aside>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="mt-10">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    <!-- 1️⃣ Left -->
+    <div>
+      <img src="picscan-header.png" alt="Picscan Logo" class="h-10 mb-3">
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Picscan Labs provides AI-powered tools to help users verify whether an image is real or generated by AI technology.
+      </p>
+    </div>
+
+    <!-- 2️⃣ Quick Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="/" class="text-blue-400 font-semibold">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+        <li><a href="faq.html" class="hover:text-blue-400">FAQ</a></li>
+        <li><a href="privacy-policy.html" class="hover:text-blue-400">Privacy Policy</a></li>
+        <li><a href="terms-of-use.html" class="hover:text-blue-400">Terms Of Use</a></li>
+        <li><a href="disclaimer.html" class="hover:text-blue-400">Disclaimer</a></li>
+        <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 3️⃣ Address -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Address</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Jalan Sunter Muara<br>
+        RT 013/005<br>
+        Sunter Agung<br>
+        Tanjung Priok<br>
+        Jakarta Utara<br>
+        Indonesia, 14350<br>
+        <span class="text-blue-400">picscan22@gmail.com</span>
+      </p>
+    </div>
+
+    <!-- 4️⃣ Knowledge -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Knowledge</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="ai-vs-human.html" class="hover:text-blue-400">AI vs Human Images</a></li>
+        <li><a href="tips-detect-ai.html" class="hover:text-blue-400">Tips: Detect AI Images</a></li>
+        <li><a href="blog.html" class="hover:text-blue-400">Blog</a></li>
+        <li><a href="resources.html" class="hover:text-blue-400">Resources</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+
+  </div>
+</footer>
+
+<script>
+document.getElementById("burger").onclick=()=>document.getElementById("mobileMenu").classList.toggle("show");
+</script>
+</body>
+</html>

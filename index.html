@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Picscan Online AI Image Detector Free No Login</title>
+<meta name="description" content="Picscan Online AI Image Detector is free tool to identify images is AI generated or real">
+<meta name="keywords" content="ai image detector, ai photo detector, ai generated image detector, ai detector, artificial intelligence detector, aı detector, ai detector free, chatgpt detector, chatgpt detectors, chat gpt detector, ai text detector, free ai detector, gpt detector, gpt detectors, ai writing detector, ai content detection, ai written detector, ai write detector, ai writing detectors, copyleaks ai detector, aidetector, ai detector tools, ai code detector, ai art detector, detecting ai writing, ai essay detector, detector ai">
+<link rel="canoncal" href="https://picscan.online">
+<meta name="last-updated" content="2025-10-13 19:18:52 UTC">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://picscan.online">
+  <meta property="og:title" content="AI Image Detector">
+  <meta property="og:image" content="assets/picscan.webp">
+  <meta property="og:description" content="ai image detector to help you identify images is real or ai generated>
+  <meta property="og:site_name" content="PICSCAN">
+
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@thepracticaldev">
+  <meta name="twitter:title" content="AI Image Detector">
+  <meta name="twitter:description" content="ai image detector to help you identify images is real or ai generated">
+  <meta name="twitter:image:src" content="assets/picscan.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Robots & Canonical -->
+  <meta name="robots" content="INDEX,FOLLOW,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <link rel="dns-prefetch" href="https://picscan.online">
+  <link rel="dns-prefetch" href="htps://https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="manifest" href="https://picscan.net/manifest.json">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/icon-16.png">
+  <link rel="apple-touch-icon" href="assets/icon-512.png">
+  <meta name="theme-color" content="#1a2735" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1620" media="(prefers-color-scheme: dark)">
+  <link crossorigin rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+ <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"></noscript>
+ <link crossorigin rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+ <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+<style>
+  body{background:#0f172a;color:#fff;font-family:system-ui,sans-serif;}
+  header {
+  background: #1e293b;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+  border-bottom: 2px solid #60A5FA; /* 💙 garis biru muda hanya di bawah */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+  .navbar-logo{height:40px;}
+  footer {
+  background: #1e293b;
+  color: #cbd5e1;
+  border-top: 2px solid #60A5FA; /* biru muda (blue-400) */
+  padding: 40px 20px;
+}
+  #mobileMenu{display:none;flex-direction:column;gap:4px;background:#1e293b;position:absolute;top:60px;right:20px;padding:10px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.6);}
+  @media(max-width:640px){#mobileMenu{display:none;}.show{display:flex!important;}}
+  
+  /* PREVIEW AREA */
+  #imagePreview{display:none;position:relative;width:100%;max-width:420px;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin-top:1rem;}
+  #previewImg{max-height:100%;max-width:100%;object-fit:contain;display:block;margin:auto;}
+  #analyzeOverlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;}
+  .scan-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#00ff9d,transparent);animation:scanMove 2s linear infinite;}
+  @keyframes scanMove{0%{top:0;opacity:.8;}50%{top:100%;opacity:1;}100%{top:0;opacity:.8;}}
+  
+  /* MODAL */
+/* Overlay */
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; /* gunakan flex saat aktif */
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem; /* biar ada ruang di pinggir mobile */
+  overflow-y: auto; /* biar isi bisa discroll kalau tinggi */
+}
+
+/* Modal box */
+#modal .box {
+  background: #111827;
+  color: #fff;
+  border-radius: 16px;
+  width: 100%;              /* selalu penuh mengikuti parent */
+  max-width: 400px;         /* tapi tidak melebihi 400px di desktop */
+  padding: 20px;
+  position: relative;
+  border: 1px solid #334155;
+  box-sizing: border-box;   /* biar padding gak nambah lebar total */
+}
+
+/* Tombol close */
+#modalClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #94a3b8;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+}
+#modalClose:hover {
+  color: #fff;
+}
+.sidebar-ad {
+  width: 300px;
+  min-width: 300px;
+  height: 250px;
+  background-color: #1e293b;       /* warna dasar gelap */
+  color: #94a3b8;                  /* teks abu kebiruan */
+  font-size: 12px;
+  border: 1px dashed #334155;      /* garis placeholder */
+  border-radius: 8px;              /* sudut lembut */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in-out;
+  outline: 1px solid rgba(96,165,250,0.2); /* glow tipis biru muda */
+}
+
+/* efek hover ringan biar interaktif di preview */
+.sidebar-ad:hover {
+  border-color: #60A5FA;
+  background-color: #0f172a;
+  color: #60A5FA;
+  box-shadow: 0 0 10px rgba(96,165,250,0.25);
+}
+
+.sponsor {
+  width: 300px;
+  min-width: 300px;
+  text-align: left;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 13px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Judul Sponsor */
+.sponsor h2 {
+  text-align: center;
+  color: #60A5FA; /* biru muda tailwind blue-400 */
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: 1px solid #334155;
+  margin: 0;
+  background: #0f172a;
+}
+
+/* Daftar link sponsor */
+.sponsor {
+  width: 300px;
+  min-width: 300px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 13px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Judul */
+.sponsor h2 {
+  text-align: center;
+  color: #60A5FA;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: 1px solid #334155;
+  margin: 0;
+  background: #0f172a;
+}
+
+/* Item sponsor */
+.sponsor a {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Garis bawah full width */
+.sponsor a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #334155;
+}
+
+/* Hilangkan garis terakhir */
+.sponsor a:last-child::after {
+  content: none;
+}
+
+/* Hover efek */
+.sponsor a:hover {
+  background: linear-gradient(90deg, rgba(15,23,42,1) 0%, rgba(37,99,235,0.2) 100%);
+  color: #60A5FA;
+}
+
+/* Footer dibuat mirip item list */
+.sponsor-footer {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;      /* sama seperti item <a> */
+  border-top: 1px solid #334155;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 12.5px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* hyperlink dalam footer */
+.sponsor-footer a {
+  color: #60A5FA;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sponsor-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsif tambahan */
+@media (max-width: 480px) {
+  #modal .box {
+    padding: 16px;
+    max-width: 100%;   /* biar lebar penuh di HP */
+  }
+}
+
+header {
+  background: #1e293b;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo kiri, menu kanan */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar-logo {
+  height: 40px;
+  display: block;
+}
+/* Layout container untuk konten utama + ads */
+.page-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+body > header + div.top-ad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e293b;
+  color: #94a3b8;
+  border-bottom: 1px solid #334155;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 12px auto 0 auto;
+  width: 728px;
+  max-width: 728px;
+  height: 90px;
+  font-size: 12px;
+  padding: 0;
+  
+}
+.footer-ad {
+  width: 728px;
+  height: 90px;
+  margin: 60px auto 0; /* 40px jarak dari atas */
+  padding: 0;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 12px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+footer {
+  margin-top: 0; /* Pastikan tidak ada jarak ekstra */
+  border-top: 2px solid #60A5FA;
+}
+
+
+/* Pastikan elemen layout tidak keluar layar */
+.page-layout, .top-ad, .footer-ad, header, footer {
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* === FIX: Modal lebih responsif di mobile === */
+#modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+#modal .box {
+  width: 100%;
+  max-width: 420px;
+  background: #111827;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  border: 1px solid #334155;
+}
+
+@media (max-width: 480px) {
+  #modal .box {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  #modalImg {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+}
+@media (max-width: 1024px) {
+  body > header + div.top-ad {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 80px;
+    font-size: 11px;
+    padding: 10px;
+    margin-top: 8px;
+  }
+
+  /* Samakan breakpoint dengan layout lain */
+  .page-layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 16px;
+  }
+
+
+
+
+
+@media (max-width: 640px) {
+  header {
+    justify-content: center !important; /* pusatkan isi hanya di mobile */
+    position: relative;
+  }
+
+  /* tombol burger tetap di kanan */
+  #burger {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* sembunyikan nav desktop */
+  nav {
+    display: none;
+  }
+
+  /* logo tetap proporsional di tengah */
+  .navbar-logo {
+    margin: 0 auto;
+    height: 36px;
+  }
+}
+
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PICSCAN AI",
+    "url": "https://picscan.online",
+    "applicationCategory": "Multimedia",
+    "operatingSystem": "Any",
+    "description": "Picscan Online AI Image Detector is free tool to identify images is AI generated or real",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Picscan Labs",
+      "url": "https://picscan.online"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "247"
+    },
+    "featureList": [
+      "Upload images",
+      "Analyze images",
+      "Share result v via Facebook, Twitter, Telegram, LinkedIn"
+    ],
+    "screenshot": "https://picscan.online/assets/preview.png"
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/"><img class="navbar-logo" src="assets/picscan-header.png" alt="Picscan AI"></a>
+  <nav class="hidden sm:flex gap-5 text-sm">
+    <a href="/" class="text-blue-400 font-semibold">Home</a>
+    <a href="about.html" >About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-use.html">Terms Of Use</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="hover:text-blue-400">Contact</a>
+  </nav>
+  <button id="burger" class="sm:hidden text-gray-300" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+  <div id="mobileMenu">
+    <a href="/" class="text-blue-400 font-semibold">Home</a>
+    <a href="about.html" >About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-use.html">Terms Of Use</a>
+    <a href="disclaimer.html">Disclaimer</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="hover:text-blue-400">Contact</a>
+  </div>
+</header>
+
+<!-- TOP AD -->
+<div class="top-ad">
+ Top Ad (Desktop 728x90) (Mobile responsive)
+</div>
+
+<!-- CONTENT -->
+<div class="page-layout">
+
+
+  <!-- LEFT AD -->
+ <aside class="sidebar-left">
+    <div class="sidebar-ad">
+      Sidebar Ad 2 (Desktop 300x250) (Mobile responsive)
+    </div>
+  </aside>
+
+
+
+
+  <!-- MAIN -->
+  <main class="flex-1 flex flex-col items-center text-center">
+    <h1 class="text-2xl font-semibold mb-4">Detect AI fakes in seconds - verify images with Picscan</h1>
+    <p class="mt-6 text-gray-400 max-w-md text-sm leading-relaxed">How to use: select language output, upload your pics, done</p>
+<!-- Language selector -->
+    <div class="mt-3 text-gray-300 text-sm flex items-center gap-4">
+      <label><input type="radio" name="lang" value="en" checked class="mr-1">English</label>
+      <label><input type="radio" name="lang" value="id" class="mr-1">Indonesia</label>
+    </div>
+    <br/><div id="dropZone" class="border-2 border-dashed border-gray-600 bg-[#1e293b] rounded-xl p-10 cursor-pointer max-w-sm w-full hover:border-blue-400 transition">
+      Click or Drop image here
+    </div>
+
+    
+
+    <!-- PREVIEW -->
+    <div id="imagePreview">
+      <img id="previewImg" alt="Preview"/>
+      <div id="analyzeOverlay"><div class="scan-line"></div></div>
+    </div>
+
+    <button id="removeBtn" class="hidden mt-3 bg-red-600 px-4 py-2 rounded-lg text-white">Remove</button>
+
+    <article id="infoArticle" class="mt-6 text-gray-400 max-w-md text-sm leading-relaxed">
+      Today’s AI can generate lifelike photos with incredible detail. Picscan Online helps you analyze whether a visual is real or produced by artificial intelligence.
+    </article>
+  </main>
+
+  <!-- RIGHT AD -->
+ <aside class="sidebar-left">
+    <div class="sidebar-ad">
+      Sidebar Ad 2 (Desktop 300x250) (Mobile responsive)
+    </div>
+  </aside>
+
+
+
+</div>
+<div class="footer-ad">
+  Footer Ad (Desktop 728x90) (Mobile responsive)
+</div>
+<!-- FOOTER -->
+
+<footer class="mt-10">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+    <!-- 1️⃣ Left -->
+    <div>
+      <img src="assets/picscan-header.png" alt="Picscan Logo" class="h-10 mb-3">
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Picscan Labs provides AI-powered tools to help users verify whether an image is real or generated by AI technology.
+      </p>
+    </div>
+
+    <!-- 2️⃣ Quick Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="/" class="text-blue-400 font-semibold">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+        <li><a href="faq.html" class="hover:text-blue-400">FAQ</a></li>
+        <li><a href="privacy-policy.html" class="hover:text-blue-400">Privacy Policy</a></li>
+        <li><a href="terms-of-use.html" class="hover:text-blue-400">Terms Of Use</a></li>
+        <li><a href="disclaimer.html" class="hover:text-blue-400">Disclaimer</a></li>
+        <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 3️⃣ Address -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Address</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Jalan Sunter Muara<br>
+        RT 013/005<br>
+        Sunter Agung<br>
+        Tanjung Priok<br>
+        Jakarta Utara<br>
+        Indonesia, 14350<br>
+        <span class="text-blue-400">hello@picscan.online</span>
+      </p>
+    </div>
+
+    <!-- 4️⃣ Knowledge -->
+    <div>
+      <h3 class="text-white font-semibold mb-3">Knowledge</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="ai-vs-human.html" class="hover:text-blue-400">AI vs Human Images</a></li>
+        <li><a href="tips-detect-ai.html" class="hover:text-blue-400">Tips: Detect AI Images</a></li>
+        <li><a href="blog.html" class="hover:text-blue-400">Blog</a></li>
+        <li><a href="resources.html" class="hover:text-blue-400">Resources</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+
+  </div>
+</footer>
+
+<!-- MODAL -->
+<!-- Overlay -->
+<div id="modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-60 flex items-center justify-center p-4">
+  <!-- Modal box -->
+  <div class="box relative bg-gray-900 text-center rounded-lg shadow-xl w-full max-w-md mx-auto p-5 overflow-y-auto max-h-[90vh] border border-gray-700">
+    
+    <!-- Close button -->
+    <button id="modalClose" class="absolute top-3 right-3 text-gray-400 hover:text-white">
+      <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Ad placeholder -->
+    <div class="bg-gray-800 text-gray-400 text-xs w-full h-20 flex items-center justify-center rounded-md mb-4 border border-gray-700">
+      Ad Placeholder
+    </div>
+
+    <!-- Image -->
+    <img id="modalImg" class="mx-auto mb-3 w-32 sm:w-40 h-32 sm:h-40 object-contain rounded-md border border-gray-700" />
+
+    <!-- Icon -->
+    <div id="modalIcon" class="mb-2"></div>
+
+    <!-- Title -->
+    <h3 id="modalTitle" class="text-lg sm:text-xl font-semibold mb-2 text-blue-400">Result</h3>
+
+    <!-- Body -->
+    <div id="modalBody" class="text-sm text-gray-300 text-left max-h-48 sm:max-h-60 overflow-y-auto mb-4 whitespace-pre-wrap leading-relaxed">
+      ...
+    </div>
+
+    <!-- Share buttons -->
+    <div class="flex items-center justify-center flex-wrap gap-4 border-t border-gray-700 pt-3 mt-2">
+      <button id="copyBtn" class="hover:text-blue-400"><i class="fa-solid fa-copy text-lg"></i></button>
+      <a id="shareFb" href="#" target="_blank" class="hover:opacity-80"><i class="fab fa-facebook text-xl text-blue-500"></i></a>
+      <a id="shareTg" href="#" target="_blank" class="hover:opacity-80"><i class="fab fa-telegram text-xl text-sky-400"></i></a>
+      <a id="shareWa" href="#" target="_blank" class="hover:opacity-80"><i class="fab fa-whatsapp text-xl text-green-500"></i></a>
+      <a id="shareTw" href="#" target="_blank" class="hover:opacity-80"><i class="fab fa-twitter text-xl text-blue-400"></i></a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does this tool detect AI-generated images?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The system analyzes texture, lighting, reflections, and other small details that AI often fails to replicate naturally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this tool guarantee 100% accuracy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No AI detector is perfect. This tool provides the most probable assessment based on advanced visual analysis, but cannot guarantee absolute certainty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What file formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can upload JPG, PNG, or WEBP formats. Large or uncommon files may take longer to process."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my uploaded image stored anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All images are analyzed temporarily in memory and not stored after processing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work for AI-generated artwork or illustrations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the tool can also detect AI-created digital art, though accuracy may vary for stylized images."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this for commercial verification?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can use the results for assistance in verification, but always cross-check for legal or commercial use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the tool says 'Uncertain'?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It means the system found both real and AI-like characteristics, making it unable to decide confidently."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does lighting or compression affect detection accuracy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, poor lighting or high compression can reduce analysis precision."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I test photos found online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can upload any public photo for authenticity checking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this tool improve over time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the AI detector is continuously updated with new data to improve accuracy and reliability."
+      }
+    }
+  ]
+}
+</script>
+<script defer src="https://picscan.adxpub.workers.dev/"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
+<script>
+function showOffer(){
+modal.classList.remove('hidden');
+
+
+// Jika deferredPrompt tersedia, aktifkan tombol install untuk memicu prompt
+if(deferredPrompt){
+btnInstall.disabled = false;
+hint.textContent = '';
+} else {
+// Tidak ada deferredPrompt: berikan instruksi manual tergantung platform
+btnInstall.disabled = false; // tetap aktif: kita akan tampilkan instruksi ketika diklik
+hint.textContent = 'Jika tombol Pasang tidak memunculkan dialog, gunakan menu browser → "Add to Home screen" atau "Install".';
+}
+}
+
+
+function hideOffer(){
+modal.classList.add('hidden');
+}
+
+
+// Tombol "Pasang"
+btnInstall.addEventListener('click', async () => {
+// catat bahwa kita sudah menawarkannya sehingga tidak muncul lagi
+try{ localStorage.setItem(OFFER_FLAG, 'true'); } catch(e){}
+
+
+if(deferredPrompt){
+// Tampilkan prompt instalasi bawaan browser
+deferredPrompt.prompt();
+const choiceResult = await deferredPrompt.userChoice;
+// choiceResult: { outcome: 'accepted'|'dismissed', platform: '...' }
+if(choiceResult.outcome === 'accepted'){
+console.log('User accepted the A2HS prompt');
+hideOffer();
+} else {
+console.log('User dismissed the A2HS prompt');
+// Jika ditolak, biarkan user menutup manual
+}
+deferredPrompt = null;
+} else {
+// Tidak ada deferredPrompt -> tampilkan petunjuk manual
+alert('Untuk memasang: buka menu browser (⋮ atau share) → pilih "Add to Home screen" atau "Install".');
+}
+});
+
+
+// Tombol "Nanti"
+btnDecline.addEventListener('click', () => {
+try{ localStorage.setItem(OFFER_FLAG, 'true'); } catch(e){}
+hideOffer();
+});
+
+
+// Pastikan offer muncul pada load pertama jika beforeinstallprompt tidak pernah terpanggil
+window.addEventListener('load', () => {
+// Tampilkan saja saat belum pernah ditampilkan
+try{
+const shown = localStorage.getItem(OFFER_FLAG);
+if(!shown){
+// Jika deferredPrompt sudah tersedia, mungkin already handled in beforeinstallprompt
+// Namun untuk memastikan permintaan user, kita panggil maybeShowOffer untuk menampilkan modal.
+maybeShowOffer();
+}
+}catch(e){ /* ignore */ }
+});
+
+
+// ======= PWA Service Worker Registration =======
+if('serviceWorker' in navigator){
+window.addEventListener('load', () => {
+navigator.serviceWorker.register('service-worker.js').then(reg => {
+console.log('ServiceWorker terdaftar:', reg.scope);
+}).catch(err => {
+console.warn('Gagal daftar service worker:', err);
+});
+});
+}
+</script>
+<script>
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('modalClose');
+
+function openModal() {
+  modal.classList.remove('hidden');
+  modal.classList.add('fade-in');
+}
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('fade-in');
+  modal.classList.add('fade-out');
+  setTimeout(() => modal.classList.add('hidden'), 300);
+});
+</script>
+<script defer src="https://picscanonline.adxpub.workers.dev/"></script> 
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+</script>
+</body>
+</html>

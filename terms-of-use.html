@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Terms Of Use - PICSCAN AI</title>
+<meta name="description" content="Picscan AI is ai image detector to help you identify images is real or ai generated with ease">
+<meta name="keywords" content="ai image detector, ai photo detector, ai generated image detector, ai detector, artificial intelligence detector, aı detector, ai detector free, chatgpt detector, chatgpt detectors, chat gpt detector, ai text detector, free ai detector, gpt detector, gpt detectors, ai writing detector, ai content detection, ai written detector, ai write detector, ai writing detectors, copyleaks ai detector, aidetector, ai detector tools, ai code detector, ai art detector, detecting ai writing, ai essay detector, detector ai">
+<link rel="canoncal" href="https://picscan.online">
+<meta name="last-updated" content="2025-10-10 09:08:54 UTC">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://picscan.online">
+  <meta property="og:title" content="AI Image Detector">
+  <meta property="og:image" content="assets/picscan.webp">
+  <meta property="og:description" content="ai image detector to help you identify images is real or ai generated>
+  <meta property="og:site_name" content="PICSCAN">
+
+  <!-- Twitter -->
+  <meta name="twitter:site" content="@thepracticaldev">
+  <meta name="twitter:title" content="AI Image Detector">
+  <meta name="twitter:description" content="ai image detector to help you identify images is real or ai generated">
+  <meta name="twitter:image:src" content="assets/picscan.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Robots & Canonical -->
+  <meta name="robots" content="INDEX,FOLLOW,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+  <link rel="dns-prefetch" href="https://picscan.net">
+  <link rel="dns-prefetch" href="htps://https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/icon-16.png">
+  <link rel="apple-touch-icon" href="assets/icon-512.png">
+  <meta name="theme-color" content="#1a2735" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d1620" media="(prefers-color-scheme: dark)">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<style>
+  body{background:#0f172a;color:#fff;font-family:system-ui,sans-serif;}
+  header{background:#1e293b;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.4);position:sticky;top:0;z-index:50;}
+  .navbar-logo{height:40px;}
+  footer{background:#1e293b;color:#cbd5e1;border-top:1px solid #334155;padding:40px 20px;}
+  #mobileMenu{display:none;flex-direction:column;gap:4px;background:#1e293b;position:absolute;top:60px;right:20px;padding:10px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.6);}
+  @media(max-width:640px){#mobileMenu{display:none;}.show{display:flex!important;}}
+  
+  /* PREVIEW AREA */
+  #imagePreview{display:none;position:relative;width:100%;max-width:420px;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden;margin-top:1rem;}
+  #previewImg{max-height:100%;max-width:100%;object-fit:contain;display:block;margin:auto;}
+  #analyzeOverlay{display:none;position:absolute;inset:0;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;}
+  .scan-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#00ff9d,transparent);animation:scanMove 2s linear infinite;}
+  @keyframes scanMove{0%{top:0;opacity:.8;}50%{top:100%;opacity:1;}100%{top:0;opacity:.8;}}
+  
+  /* MODAL */
+  #modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:100;}
+  #modal .box{background:#111827;color:#fff;border-radius:16px;width:90%;max-width:400px;padding:20px;position:relative;border:1px solid #334155;}
+  #modalClose{position:absolute;top:10px;right:10px;color:#94a3b8;cursor:pointer;}
+  #modalClose:hover{color:#fff;}
+  .sidebar-ad {
+  width: 300px;
+  min-width: 300px;
+  text-align: center;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 12px;
+  height: 250px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header {
+  background: #1e293b;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo kiri, menu kanan */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar-logo {
+  height: 40px;
+  display: block;
+}
+/* Layout container untuk konten utama + ads */
+.page-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+body > header + div.top-ad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1e293b;
+  color: #94a3b8;
+  border-bottom: 1px solid #334155;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 12px auto 0 auto;
+  width: 728px;
+  max-width: 728px;
+  height: 90px;
+  font-size: 12px;
+  padding: 0;
+}
+.footer-ad {
+  width: 728px;
+  height: 90px;
+  margin: 0;
+  padding: 0;
+background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 12px;
+  border-bottom: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+footer {
+  margin-top: 0; /* Pastikan tidak ada jarak ekstra */
+}
+
+@media (max-width: 1024px) {
+  body > header + div.top-ad {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 80px;
+    font-size: 11px;
+    padding: 10px;
+    margin-top: 8px;
+  }
+
+  /* Samakan breakpoint dengan layout lain */
+  .page-layout {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 16px;
+  }
+
+  .sidebar-ad {
+    width: 100%;
+    max-width: 600px;
+    height: 250px;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    justify-content: center !important; /* pusatkan isi hanya di mobile */
+    position: relative;
+  }
+
+  /* tombol burger tetap di kanan */
+  #burger {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* sembunyikan nav desktop */
+  nav {
+    display: none;
+  }
+
+  /* logo tetap proporsional di tengah */
+  .navbar-logo {
+    margin: 0 auto;
+    height: 36px;
+  }
+}
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "PICSCAN AI",
+    "url": "https://picscan.net",
+    "applicationCategory": "Multimedia",
+    "operatingSystem": "Any",
+    "description": "Picscan AI is ai image detector to help you identify images is real or ai generated with ease",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "IDR"
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Picscan Labs",
+      "url": "https://picscan.net"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "247"
+    },
+    "featureList": [
+      "Upload images",
+      "Analyze images",
+      "Share result v via Facebook, Twitter, Telegram, LinkedIn"
+    ],
+    "screenshot": "https://picscan.net/preview.png"
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="/"><img class="navbar-logo" src="assets/picscan-header.png" alt="Picscan AI"></a>
+  <nav class="hidden sm:flex gap-5 text-sm">
+    <a href="/" >Home</a>
+    <a href="about.html" >About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-use.html" class="text-blue-400 font-semibold">Terms Of Use</a>
+    <a href="disclaimer.html" >Disclaimer</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="hover:text-blue-400">Contact</a>
+  </nav>
+  <button id="burger" class="sm:hidden text-gray-300" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+  <div id="mobileMenu">
+    <a href="/" class="text-blue-400 font-semibold">Home</a>
+    <a href="about.html" >About</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-use.html"class="text-blue-400 font-semibold">Terms Of Use</a>
+    <a href="disclaimer.html" >Disclaimer</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="hover:text-blue-400">Contact</a>
+  </div>
+</header>
+
+<!-- TOP AD -->
+<div class="top-ad">
+  Responsive Top Ad Placeholder (728x90)
+</div>
+
+<!-- CONTENT -->
+<div class="page-layout">
+
+
+  <!-- LEFT AD -->
+ <aside class="sidebar-right">
+    <div class="sidebar-ad">
+      Right Sidebar Ad 300x250
+    </div>
+  </aside>
+<!-- MAIN -->
+  <main class="flex-1">
+  <section class="card p-6 text-left space-y-4 text-white">
+    <h1 class="text-2xl font-semibold mb-2">Terms of Use — Picscan Online</h1>
+
+    <p>Welcome to Picscan Online (https://picscan.online). These Terms of Use govern your access to and use of our website and services. By using Picscan Online you accept these Terms of Use. If you do not agree with these terms, please do not use our services.</p>
+
+    <h2 class="text-xl font-semibold mt-6">1. About Picscan Online</h2>
+    <p>Picscan Online is a platform that helps users evaluate whether an image is authentic or generated by artificial intelligence. We provide tools that analyze visual characteristics and offer an assessment to assist users in verifying image origin.</p>
+
+    <h2 class="text-xl font-semibold mt-6">2. Acceptance of Terms</h2>
+    <p>By accessing or using Picscan Online you agree to follow and be bound by these Terms of Use and any additional policies posted on the site. These Terms of Use form a binding agreement between you and Picscan Online.</p>
+
+    <h2 class="text-xl font-semibold mt-6">3. Changes to These Terms</h2>
+    <p>We may update these Terms of Use from time to time. When we make changes we will post the revised terms on this page. Your continued use of the service after changes are posted means you accept the updated terms.</p>
+
+    <h2 class="text-xl font-semibold mt-6">4. Privacy and Data</h2>
+    <p>Our Privacy Policy explains how we collect, use and protect personal data. We design our service with privacy in mind and images submitted for analysis are not stored by default. Please review our Privacy Policy to understand our practices.</p>
+
+    <h2 class="text-xl font-semibold mt-6">5. Acceptable Use</h2>
+    <p>You agree not to use Picscan Online for unlawful purposes or to upload content that violates any law, infringes the rights of others, or contains harmful material. You must not attempt to interfere with or disrupt the service, or to reverse engineer our detection systems.</p>
+
+    <h2 class="text-xl font-semibold mt-6">6. User Content</h2>
+    <p>You retain ownership of the images you submit. By submitting an image you grant Picscan Online a limited license to process the image for the purpose of providing the service and improving our systems. We will not publish your images except as described in our Privacy Policy or with your consent.</p>
+
+    <h2 class="text-xl font-semibold mt-6">7. Ads and Third Party Services</h2>
+    <p>Picscan Online may display advertising, including ads served by Google AdSense or other third parties. These ads are provided by third parties and are subject to their terms and policies. We are not responsible for the content or practices of advertisers or other third party sites linked from our service.</p>
+
+    <h2 class="text-xl font-semibold mt-6">8. Intellectual Property</h2>
+    <p>All content, features and functionality of the site, including text, graphics, logos and code, are the property of Picscan Online or our licensors and are protected by copyright and other intellectual property laws. You may not copy, reproduce or create derivative works from our content without prior written permission.</p>
+
+    <h2 class="text-xl font-semibold mt-6">9. Disclaimers</h2>
+    <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND. WHILE WE STRIVE FOR ACCURACY, RESULTS FROM OUR IMAGE ANALYSIS ARE ESTIMATES AND MAY BE INCORRECT. DO NOT RELY SOLELY ON THE SERVICE FOR LEGAL, MEDICAL, JOURNALISTIC OR OTHER PROFESSIONAL DECISIONS.</p>
+
+    <h2 class="text-xl font-semibold mt-6">10. Limitation of Liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, PICTURESCAN ONLINE AND ITS PROVIDERS ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES. OUR TOTAL LIABILITY FOR CLAIMS RELATED TO THE SERVICE IS LIMITED TO THE AMOUNT YOU PAID, IF ANY, OR ONE HUNDRED DOLLARS.</p>
+
+    <h2 class="text-xl font-semibold mt-6">11. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless Picscan Online, its officers, directors and employees from any claims, liabilities, losses or expenses arising from your use of the service or violation of these Terms of Use.</p>
+
+    <h2 class="text-xl font-semibold mt-6">12. Termination</h2>
+    <p>We may suspend or terminate your access to the service at any time for violation of these terms or for any other reason. Sections that by their nature should survive termination will remain in effect after termination.</p>
+
+    <h2 class="text-xl font-semibold mt-6">13. Governing Law</h2>
+    <p>These Terms of Use are governed by the laws of the jurisdiction where Picscan Online operates. You agree that any dispute arising from these terms will be resolved in appropriate courts of that jurisdiction.</p>
+
+    <h2 class="text-xl font-semibold mt-6">14. Contact Us</h2>
+    <p>If you have questions about these Terms of Use, please contact us via the website contact form at https://picscan.online or by the email address provided on the site.</p>
+
+    <p class="text-sm text-center mt-6">&copy; 2025 Picscan Online. All rights reserved.</p>
+  </section>
+</main>
+
+
+<!-- RIGHT AD -->
+ <aside class="sidebar-right">
+    <div class="sidebar-ad">
+      Right Sidebar Ad 300x250
+    </div>
+  </aside>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer class="mt-10">
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div>
+      <img src="assets/picscan-header.png" alt="Picscan Logo" class="h-10 mb-3">
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Picscan Labs provides AI-powered tools to help users verify whether an image is real or generated by AI technology.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-gray-400 text-sm">
+        <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+        <li><a href="about.html" class="hover:text-blue-400">About</a></li>
+        <a href="about.html" class="text-blue-400 font-semibold">Terms of Use</a>
+        <li><a href="faq.html" class="hover:text-blue-400">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-3">Address</h3>
+      <p class="text-gray-400 text-sm leading-relaxed">
+        Picscan Labs HQ<br>
+        Jl. Teknologi AI No. 42<br>
+        Jakarta, Indonesia 10220<br>
+        <span class="text-blue-400">contact@picscan.net</span>
+      </p>
+    </div>
+  </div>
+  <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+    © 2025 <a href="https://picscan.net/" class="text-blue-400 hover:underline">Picscan Labs</a>. All rights reserved.
+  </div>
+</footer>
+
+<script>
+document.getElementById("burger").onclick=()=>document.getElementById("mobileMenu").classList.toggle("show");
+</script>
+
+</body>
+</html>
