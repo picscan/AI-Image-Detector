@@ -6,7 +6,7 @@
 <title>Terms Of Use - PICSCAN AI</title>
 <meta name="description" content="Picscan AI is ai image detector to help you identify images is real or ai generated with ease">
 <meta name="keywords" content="ai image detector, ai photo detector, ai generated image detector, ai detector, artificial intelligence detector, aı detector, ai detector free, chatgpt detector, chatgpt detectors, chat gpt detector, ai text detector, free ai detector, gpt detector, gpt detectors, ai writing detector, ai content detection, ai written detector, ai write detector, ai writing detectors, copyleaks ai detector, aidetector, ai detector tools, ai code detector, ai art detector, detecting ai writing, ai essay detector, detector ai">
-<link rel="canoncal" href="https://picscan.online">
+<link rel="canoncal" href="https://picscan.online/terms-of-use.html">
 <meta name="last-updated" content="2025-10-10 09:08:54 UTC">
 
   <!-- Open Graph / Social Media -->
@@ -37,10 +37,28 @@
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 <style>
-  body{background:#0f172a;color:#fff;font-family:system-ui,sans-serif;}
-  header{background:#1e293b;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.4);position:sticky;top:0;z-index:50;}
+  body{background:#ffffff;color:#000000;font-family:system-ui,sans-serif;}
+  header {
+  background: #ffffff);
+  padding: 12px 20px;
+  display: flex;
+  color:#000;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 8);
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
   .navbar-logo{height:40px;}
-  footer{background:#1e293b;color:#cbd5e1;border-top:1px solid #334155;padding:40px 20px;}
+  footer {
+  background: #1e293b;
+  color: #fff;
+  border-top: 2px solid #60A5FA; /* biru muda (blue-400) */
+  padding: 40px 20px;
+}
   #mobileMenu{display:none;flex-direction:column;gap:4px;background:#1e293b;position:absolute;top:60px;right:20px;padding:10px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.6);}
   @media(max-width:640px){#mobileMenu{display:none;}.show{display:flex!important;}}
   
@@ -52,26 +70,199 @@
   @keyframes scanMove{0%{top:0;opacity:.8;}50%{top:100%;opacity:1;}100%{top:0;opacity:.8;}}
   
   /* MODAL */
-  #modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:100;}
-  #modal .box{background:#111827;color:#fff;border-radius:16px;width:90%;max-width:400px;padding:20px;position:relative;border:1px solid #334155;}
-  #modalClose{position:absolute;top:10px;right:10px;color:#94a3b8;cursor:pointer;}
-  #modalClose:hover{color:#fff;}
-  .sidebar-ad {
+/* Overlay */
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none; /* gunakan flex saat aktif */
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem; /* biar ada ruang di pinggir mobile */
+  overflow-y: auto; /* biar isi bisa discroll kalau tinggi */
+}
+
+/* Modal box */
+#modal .box {
+  background: #111827;
+  color: #fff;
+  border-radius: 16px;
+  width: 100%;              /* selalu penuh mengikuti parent */
+  max-width: 400px;         /* tapi tidak melebihi 400px di desktop */
+  padding: 20px;
+  position: relative;
+  border: 1px solid #334155;
+  box-sizing: border-box;   /* biar padding gak nambah lebar total */
+}
+
+/* Tombol close */
+#modalClose {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #94a3b8;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+}
+#modalClose:hover {
+  color: #fff;
+}
+.sidebar-ad {
   width: 300px;
   min-width: 300px;
-  text-align: center;
-  border: 1px solid #334155;
-  background-color: #1e293b;
-  color: #94a3b8;
-  font-size: 12px;
   height: 250px;
-  border-radius: 8px;
+  background-color: #1e293b;       /* warna dasar gelap */
+  color: #94a3b8;                  /* teks abu kebiruan */
+  font-size: 12px;
+  border: 1px dashed #334155;      /* garis placeholder */
+  border-radius: 8px;              /* sudut lembut */
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.25s ease-in-out;
+  outline: 1px solid rgba(96,165,250,0.2); /* glow tipis biru muda */
 }
+
+/* efek hover ringan biar interaktif di preview */
+.sidebar-ad:hover {
+  border-color: #60A5FA;
+  background-color: #0f172a;
+  color: #60A5FA;
+  box-shadow: 0 0 10px rgba(96,165,250,0.25);
+}
+
+.sponsor {
+  width: 300px;
+  min-width: 300px;
+  text-align: left;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 13px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Judul Sponsor */
+.sponsor h2 {
+  text-align: center;
+  color: #60A5FA; /* biru muda tailwind blue-400 */
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: 1px solid #334155;
+  margin: 0;
+  background: #0f172a;
+}
+
+/* Daftar link sponsor */
+.sponsor {
+  width: 300px;
+  min-width: 300px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #94a3b8;
+  font-size: 13px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Judul */
+.sponsor h2 {
+  text-align: center;
+  color: #60A5FA;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-bottom: 1px solid #334155;
+  margin: 0;
+  background: #0f172a;
+}
+
+/* Item sponsor */
+.sponsor a {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  box-sizing: border-box;
+}
+
+/* Garis bawah full width */
+.sponsor a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #334155;
+}
+
+/* Hilangkan garis terakhir */
+.sponsor a:last-child::after {
+  content: none;
+}
+
+/* Hover efek */
+.sponsor a:hover {
+  background: linear-gradient(90deg, rgba(15,23,42,1) 0%, rgba(37,99,235,0.2) 100%);
+  color: #60A5FA;
+}
+
+/* Footer dibuat mirip item list */
+.sponsor-footer {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;      /* sama seperti item <a> */
+  border-top: 1px solid #334155;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 12.5px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* hyperlink dalam footer */
+.sponsor-footer a {
+  color: #60A5FA;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sponsor-footer a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsif tambahan */
+@media (max-width: 480px) {
+  #modal .box {
+    padding: 16px;
+    max-width: 100%;   /* biar lebar penuh di HP */
+  }
+}
+
 header {
-  background: #1e293b;
+background: #ffffff;
   padding: 12px 20px;
   display: flex;
   align-items: center;
@@ -79,6 +270,7 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, .4);
   position: sticky;
   top: 0;
+  color:#000000;
   z-index: 50;
 }
 
@@ -92,11 +284,21 @@ header {
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
-  width: 100%;
+  width: 50%;
   margin-top: 2rem;
-  padding: 0 1rem;
+  padding: 2rem;
   box-sizing: border-box;
+
+  /* 🌟 tambahan estetika */
+  background: #fff;              /* sama warna dasar tapi sedikit lebih terang */
+
+  border-radius: 16px;              /* sudut lembut */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);  /* bayangan halus */
+  max-width: 1100px;                /* agar tidak terlalu melebar di layar besar */
+  margin-left: auto;
+  margin-right: auto;
 }
+
 body > header + div.top-ad {
   display: flex;
   align-items: center;
@@ -112,28 +314,79 @@ body > header + div.top-ad {
   height: 90px;
   font-size: 12px;
   padding: 0;
+  
 }
 .footer-ad {
   width: 728px;
   height: 90px;
-  margin: 0;
+  margin: 60px auto 0; /* 40px jarak dari atas */
   padding: 0;
-background-color: #1e293b;
+  background-color: #1e293b;
   color: #94a3b8;
   font-size: 12px;
   border-bottom: 1px solid #334155;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
+
+
 footer {
   margin-top: 0; /* Pastikan tidak ada jarak ekstra */
+  border-top: 2px solid #60A5FA;
+  color:#ffffff;
 }
 
+
+/* Pastikan elemen layout tidak keluar layar */
+.page-layout, .top-ad, .footer-ad, header, footer {
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* === FIX: Modal lebih responsif di mobile === */
+#modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+#modal .box {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 12px;
+  color: #000;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  border: 1px solid #334155;
+}
+
+@media (max-width: 480px) {
+  #modal .box {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+
+  #modalImg {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+}
 @media (max-width: 1024px) {
   body > header + div.top-ad {
     width: 100%;
@@ -153,13 +406,9 @@ footer {
     gap: 16px;
   }
 
-  .sidebar-ad {
-    width: 100%;
-    max-width: 600px;
-    height: 250px;
-    margin: 10px 0;
-  }
-}
+
+
+
 
 @media (max-width: 640px) {
   header {
@@ -186,39 +435,8 @@ footer {
     height: 36px;
   }
 }
+
 </style>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "PICSCAN AI",
-    "url": "https://picscan.net",
-    "applicationCategory": "Multimedia",
-    "operatingSystem": "Any",
-    "description": "Picscan AI is ai image detector to help you identify images is real or ai generated with ease",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "IDR"
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Picscan Labs",
-      "url": "https://picscan.net"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "247"
-    },
-    "featureList": [
-      "Upload images",
-      "Analyze images",
-      "Share result v via Facebook, Twitter, Telegram, LinkedIn"
-    ],
-    "screenshot": "https://picscan.net/preview.png"
-  }
-  </script>
 </head>
 <body>
 
@@ -247,23 +465,17 @@ footer {
 </header>
 
 <!-- TOP AD -->
-<div class="top-ad">
-  Responsive Top Ad Placeholder (728x90)
-</div>
+
 
 <!-- CONTENT -->
 <div class="page-layout">
 
 
   <!-- LEFT AD -->
- <aside class="sidebar-right">
-    <div class="sidebar-ad">
-      Right Sidebar Ad 300x250
-    </div>
-  </aside>
+
 <!-- MAIN -->
   <main class="flex-1">
-  <section class="card p-6 text-left space-y-4 text-white">
+  <section class="card p-6 text-left space-y-4 text-gray-800">
     <h1 class="text-2xl font-semibold mb-2">Terms of Use — Picscan Online</h1>
 
     <p>Welcome to Picscan Online (https://picscan.online). These Terms of Use govern your access to and use of our website and services. By using Picscan Online you accept these Terms of Use. If you do not agree with these terms, please do not use our services.</p>
@@ -316,11 +528,7 @@ footer {
 
 
 <!-- RIGHT AD -->
- <aside class="sidebar-right">
-    <div class="sidebar-ad">
-      Right Sidebar Ad 300x250
-    </div>
-  </aside>
+
 
 </div>
 
